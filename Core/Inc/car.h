@@ -20,8 +20,8 @@
 #include "msgs/state_msg.hpp"
 
 /* Robot Dimensions */
-#define BASE_DIAMETER 0.61f
-#define WHEEL_DIAMETER 0.152f
+#define BASE_DIAMETER 0.27f
+#define WHEEL_DIAMETER 0.0657f
 
 /* Robot Maximum Limits */
 #define MAXIMUM_VELOCITY 1.0f

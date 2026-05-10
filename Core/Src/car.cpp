@@ -1,5 +1,6 @@
 #include "car.h"
 #include "main.h"
+#include "msgs/state_msg.hpp"
 #include "stdio.h"
 
 Car car;
@@ -27,9 +28,19 @@ void Car::run()
   HAL_GPIO_WritePin(LED_GPIO_Port, LED_Pin, GPIO_PIN_SET);
   robot_loop_tick = HAL_GetTick();
   main_uart.get_received_data((uint8_t *)&twist);
-  set_twist(twist);
-  // update();
-  // left_motor.set_speed(0.2f);
+
+  Twist tw;
+  tw.vx = 0.0;
+  tw.vy = 0;
+  tw.w = 0.1;
+
+  // set_twist(tw);
+  //  update();
+  //  left_motor.set_speed(0.2f);
+  //  right_motor.set_speed(0.2f);
+
+  printf("%li\n", this->right_encoder.get_count_aggregate());
+
   // printf("hello\n");
 }
 
